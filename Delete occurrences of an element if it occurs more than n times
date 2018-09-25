@@ -1,0 +1,13 @@
+std::vector<int> deleteNth(std::vector<int> arr, int n)
+{
+  int lung = arr.size();
+  for(int i = lung-1; i>=0 ; --i){
+    //determin numarul de apariti a fiecarui element din vector
+    auto nr_aparitii = std::count(arr.begin(), arr.end(), arr[i]);
+    if (nr_aparitii > n){
+      arr.erase(arr.begin()+i);
+    }
+  }
+    return arr;
+    
+}
