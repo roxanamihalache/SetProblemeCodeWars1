@@ -1,0 +1,16 @@
+#include <string>
+
+std::string fakeBin(std::string str){
+  //your code here
+/*
+  //VARIANTA 1
+  for(std::size_t i=0 ; i < str.length() ; i ++){
+    if(str[i] < '5') str[i] = '0' ;
+      else str[i] = '1';
+  }
+  return str;
+  */
+  //VARIANTA2
+   std::transform(str.begin(), str.end(), str.begin(), []( char c) ->  char { return  (c <'5') ? '0':'1';});
+   return str;
+}
